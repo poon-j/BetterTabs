@@ -16,6 +16,7 @@ function displaySavedMessage() {
 }
 
 function load() {
+	updateMaxTabOptions();
 	chrome.storage.sync.get({
 		maxTabsToggle: false,
 		maxTabCount: '5'
@@ -23,7 +24,6 @@ function load() {
 		document.getElementById('maxTabsToggle').checked = items.maxTabsToggle;
 		document.getElementById('maxTabCount').value = items.maxTabCount;
 	});
-	updateMaxTabOptions();
 }
 
 function updateMaxTabOptions() {
